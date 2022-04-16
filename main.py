@@ -1,16 +1,7 @@
 import tweepy
-from keys import *
 
+client = tweepy.Client("BEARER TOKEN HERE")
 
-client = tweepy.Client(bearer_token)
-
-# client = tweepy.Client(
-#     bearer_token=bearer_token,
-#     consumer_key=consumer_key,
-#     consumer_secret=consumer_secret,
-#     access_token=access_token,
-#     access_token_secret=access_token_secret,
-# )
 
 
 username = input('Enter a tweeter ID : ')
@@ -38,15 +29,11 @@ try:
     liked_tweet = len(client.get_liked_tweets(id=user_id)[0])
 except:
     liked_tweet = 0
-# get_tweet = client.get_tweet(id=1514564579946541060)
-# print(get_tweet[0].text)
 
 print('Followers :', followers)
 print('Followings :', followings)
 print('Mentioned in Messages :', mentions)
 print('No. of Tweets :', tweets)
 print('No. of Liked Tweets :',liked_tweet)
-
-# quote = client.get_quote_tweets(id=1514564579946541060)
 
 
